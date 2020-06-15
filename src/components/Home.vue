@@ -48,17 +48,15 @@ export default {
       fetch(url)
         .then(res => res.json())
         .then(json_data => {
-          (this.name = json_data.login),
-            (this.avatar = json_data.avatar_url),
-            (this.repos = json_data.public_repos),
-            (this.followers = json_data.followers),
-            (this.following = json_data.following),
-            (this.homeURL = json_data.url),
-            (this.message = json_data.message),
-            console.log(json_data);
+          (this.profile.name = json_data.login),
+            (this.profile.avatar = json_data.avatar_url),
+            (this.profile.repos = json_data.public_repos),
+            (this.profile.followers = json_data.followers),
+            (this.profile.following = json_data.following),
+            (this.profile.homeURL = json_data.url),
+            (this.profile.message = json_data.message);
         })
         .catch(error => {
-          console.log(error);
           this.error = error;
         });
     },
